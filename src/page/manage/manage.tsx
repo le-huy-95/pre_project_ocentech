@@ -220,8 +220,15 @@ const Manage = () => {
       <Main open={open}>
         <DrawerHeader />
         <Typography paragraph>
-          <TableAddNewUser
-          />
+          {selectedIndex === 0 &&
+            <TableAddNewUser />
+          }
+          {selectedIndex === 1 &&
+            <TableManage />
+          }
+          {/* {selectedIndex === 2 &&
+            <TableAddNewUser />
+          } */}
         </Typography>
 
       </Main>

@@ -90,7 +90,7 @@ const ModalInfoUser = () => {
                             </Grid>
                         </Grid>
                         <br />
-                        <Grid container item spacing={5} className='gird-row'>
+                        <Grid container item spacing={1} className='gird-row'>
                             <Grid item sm={4} xs={4}>
                                 <FormControl sx={{ minWidth: 210 }}>
                                     <InputLabel htmlFor="grouped-native-select">Giới tính</InputLabel>

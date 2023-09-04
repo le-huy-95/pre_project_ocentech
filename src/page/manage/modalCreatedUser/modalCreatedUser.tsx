@@ -13,6 +13,7 @@ import Box from '@mui/material/Box';
 import ModalInfoUser from "./modalUserInfo/modalUserInfo"
 import ModalDegreeInfo from "./modalDegreenInfo/modalDegreeInfo "
 import ModalRelativeInfo from "./modalRelativeInfo/modalRelativeInfo"
+import RegistrationForms from "../registrationForms/registrationForms"
 interface TabPanelProps {
     children?: React.ReactNode;
     index: number;
@@ -49,24 +50,29 @@ function a11yProps(index: number) {
 
 
 
-interface Iprop {
+export interface Iprop {
     open: any,
     setOpen: any
 }
 
 
 const ModalCreatedUser = (props: Iprop) => {
+    const { open, setOpen } = props
+
     const [value, setValue] = useState(0);
+    const [openRegistration, setOpenRegistration] = useState(false);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
-    const { open, setOpen } = props
 
     const handleClose = () => {
         setOpen(false);
     };
 
+    const handleShowhideRegistrationFrom = () => {
+        setOpenRegistration(!openRegistration)
+    }
 
 
     return (
@@ -119,7 +125,7 @@ const ModalCreatedUser = (props: Iprop) => {
                     }}>
                         Lưu
                     </Button>
-                    <Button onClick={handleClose} variant="contained" disableElevation >
+                    <Button onClick={() => handleShowhideRegistrationFrom()} variant="contained" disableElevation>
                         Đăng ký
                     </Button>
                     <Button onClick={handleClose} variant="contained" disableElevation style={{
@@ -129,7 +135,12 @@ const ModalCreatedUser = (props: Iprop) => {
                         Thoát
                     </Button>
                 </DialogActions>
+                <RegistrationForms
+                    open={openRegistration}
+                    setOpen={setOpenRegistration}
+                />
             </Dialog>
+
         </div>
     );
 }

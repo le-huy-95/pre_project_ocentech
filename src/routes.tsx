@@ -11,7 +11,6 @@ const routes = createBrowserRouter([
     element: <Manage />,
 
   },
-
   {
     path: '/',
     element: <Login />,

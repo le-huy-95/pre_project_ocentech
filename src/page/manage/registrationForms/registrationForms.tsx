@@ -1,0 +1,144 @@
+import React from 'react';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+import { Iprop } from "../modalCreatedUser/modalCreatedUser"
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import "./registrationForms.scss"
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import List from '@mui/material/List';
+import Resume from "./Resume/Resume"
+
+
+
+
+const StyledList = styled(List)({
+    // selected and (selected + hover) states
+    '&& .Mui-selected, && .Mui-selected:hover': {
+        backgroundColor: 'red',
+        '&, & .MuiListItemIcon-root': {
+            color: 'White',
+        },
+    },
+    // hover states
+    '& .MuiListItemButton-root:hover': {
+        backgroundColor: '#f5f5f5',
+        '&, & .MuiListItemIcon-root': {
+            color: 'black',
+        },
+    },
+});
+
+
+
+const RegistrationForms = (props: Iprop) => {
+    const { open, setOpen } = props
+    const [selectedIndex, setSelectedIndex] = React.useState(2);
+
+    const handleListItemClick = (index: number) => {
+        setSelectedIndex(index);
+    };
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('xl'));
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    return (
+        <div>
+
+            <Dialog
+                fullScreen={fullScreen}
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="responsive-dialog-title"
+                maxWidth="xl"
+                fullWidth
+                className='container-registration-Forms'
+
+            >
+
+                <DialogTitle id="customized-dialog-title">
+                    Hồ sơ đăng ký nhân viên
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        <Box sx={{ flexGrow: 1 }}>
+                            <Grid container spacing={1} columns={22}>
+                                <Grid item xs={4}>
+                                    <StyledList >
+                                        <ListItemButton
+                                            selected={selectedIndex === 1}
+                                            onClick={() => handleListItemClick(1)}
+                                        >
+
+                                            <ListItemText primary="Hồ sơ nhân viên"
+                                                className='registration-Forms-item'
+                                            />
+                                        </ListItemButton>
+                                        <ListItemButton
+                                            className='registration-Forms-item'
+                                            selected={selectedIndex === 0}
+                                            onClick={() => handleListItemClick(0)}
+                                        >
+
+                                            <ListItemText primary="Sơ yếu lý lịch"
+                                                className='registration-Forms-item'
+                                            />
+                                        </ListItemButton>
+                                        <ListItemButton
+                                            selected={selectedIndex === 2}
+                                            onClick={() => handleListItemClick(2)}
+                                        >
+                                            <ListItemText primary="Văn bằng"
+                                                className='registration-Forms-item'
+
+                                            />
+                                        </ListItemButton>
+                                    </StyledList>
+                                </Grid>
+                                <Grid item xs={18}>
+                                    <Resume />
+                                </Grid>
+                            </Grid>
+                        </Box>
+                    </DialogContentText>
+                </DialogContent>
+                <IconButton
+                    aria-label="close"
+                    onClick={handleClose}
+                    sx={{
+                        position: 'absolute',
+                        right: 8,
+                        top: 8,
+                    }}
+                >
+                    <CloseIcon className='icon-exit' />
+                </IconButton>
+
+                <DialogActions>
+                    <Button autoFocus onClick={handleClose}>
+                        Disagree
+                    </Button>
+                    <Button onClick={handleClose} autoFocus>
+                        Agree
+                    </Button>
+                </DialogActions>
+            </Dialog>
+        </div>
+    );
+}
+
+export default RegistrationForms
