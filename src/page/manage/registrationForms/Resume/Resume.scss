@@ -1,0 +1,92 @@
+.resume-container{
+    // padding: 0 20px;
+    font-size: 25px;
+    overflow: auto;
+    .resume-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 50px;
+        background-color: #f5f5f5;
+        overflow: auto;
+        width: 100%;
+        .resume-body-header{
+            display: flex;
+            align-items: center;
+            height: 300px;
+            margin-bottom: 30px;
+            .image-user{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .image{
+                    background-image: url("https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/uploads/images/tin-tuc/157856/Originals/hinh-nen-iphone-13-pro-max-157856%20(11).jpg");
+                    height: 200px;
+                    width: 50%;
+                    background-position: center; /* Center the image */
+                    background-repeat: no-repeat; /* Do not repeat the image */
+                    background-size: cover; /* Resize the background image to cover the entire container */
+                    border-radius: 50%;
+                   }
+             }
+             .title{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .title-one{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    font-weight: 700;
+                }
+             }
+        }
+        .resume-body-content{
+            .user-info{
+                .two{
+                  .item{
+                    display: flex;
+                       .item-content{
+                        width: 70%;
+                        position: relative;
+                      .item-name{
+                        position: absolute;
+                        left: 20%;
+                        top:-10px
+                      }
+                       }
+                    }
+                }
+                .four{
+                    margin-bottom: 25px;
+                }
+                .five{
+                    font-size: 25px;
+                }
+                .six{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    font-style: italic;
+
+                }
+                .seven{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    .signature{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        margin-bottom: 50px;
+
+                    }
+                }
+            }
+        }
+    }
+   
+}

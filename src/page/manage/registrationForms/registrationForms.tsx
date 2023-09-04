@@ -76,8 +76,8 @@ const RegistrationForms = (props: Iprop) => {
                 <DialogContent>
                     <DialogContentText>
                         <Box sx={{ flexGrow: 1 }}>
-                            <Grid container spacing={1} columns={22}>
-                                <Grid item xs={4}>
+                            <Grid container spacing={1} columns={12}>
+                                <Grid item xs={4} className='sidebar'>
                                     <StyledList >
                                         <ListItemButton
                                             selected={selectedIndex === 1}
@@ -109,7 +109,7 @@ const RegistrationForms = (props: Iprop) => {
                                         </ListItemButton>
                                     </StyledList>
                                 </Grid>
-                                <Grid item xs={18}>
+                                <Grid item xs={20} className='Form-content'>
                                     <Resume />
                                 </Grid>
                             </Grid>

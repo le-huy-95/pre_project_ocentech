@@ -1,4 +1,5 @@
 .container-registration-Forms{
+    height: 100%;
     .icon-exit{
         color: #7467ef !important;
         font-weight: 500;
@@ -12,4 +13,11 @@
     }
     
 }
-.MuiDialog-container{}
+.MuiDialog-container{
+    .sidebar {
+        position: fixed; 
+    }
+    .Form-content{
+        margin-left: 200px;
+    }
+}
