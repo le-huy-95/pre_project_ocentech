@@ -16,8 +16,15 @@
 .MuiDialog-container{
     .sidebar {
         position: fixed; 
+        .registration-Forms-item{
+            span{
+                font-size: 20px;
+            }
+        }
     }
     .Form-content{
         margin-left: 200px;
+        overflow: auto;
+        
     }
 }

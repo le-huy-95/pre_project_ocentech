@@ -13,13 +13,13 @@ import CloseIcon from '@mui/icons-material/Close';
 import "./registrationForms.scss"
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import List from '@mui/material/List';
 import Resume from "./Resume/Resume"
-
+import Degreen from "./Degreen/Degreen"
+import InfomationUser from "./infomationUser/infomationUser"
 
 
 
@@ -109,8 +109,19 @@ const RegistrationForms = (props: Iprop) => {
                                         </ListItemButton>
                                     </StyledList>
                                 </Grid>
-                                <Grid item xs={20} className='Form-content'>
-                                    <Resume />
+                                <Grid item xs={12} className='Form-content'>
+                                    <div>
+                                        {selectedIndex === 2 &&
+                                            <Degreen />
+                                        }
+                                        {selectedIndex === 0 &&
+                                            <Resume />
+                                        }
+                                        {selectedIndex === 1 &&
+                                            <InfomationUser />
+                                        }
+                                    </div>
+
                                 </Grid>
                             </Grid>
                         </Box>
@@ -129,11 +140,19 @@ const RegistrationForms = (props: Iprop) => {
                 </IconButton>
 
                 <DialogActions>
-                    <Button autoFocus onClick={handleClose}>
-                        Disagree
+                    <Button variant="contained" disableElevation style={{
+                        backgroundColor: "#7467ef",
+                    }}>
+                        Lưu lại
                     </Button>
-                    <Button onClick={handleClose} autoFocus>
-                        Agree
+                    <Button variant="contained" disableElevation>
+                        Trình lên lãnh đạo
+                    </Button>
+                    <Button onClick={handleClose} variant="contained" disableElevation style={{
+                        backgroundColor: "orange",
+
+                    }}>
+                        Thoát
                     </Button>
                 </DialogActions>
             </Dialog>

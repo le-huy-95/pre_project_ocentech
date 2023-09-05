@@ -28,11 +28,11 @@ const Resume = () => {
         <div className='resume-container'>
             <div className='resume-content'>
                 <Grid container spacing={2} className='resume-body-header'>
-                    <Grid item xs={6} md={5} className='image-user'>
+                    <Grid item xs={6} md={6} className='image-user'>
                         <div className='image'>
                         </div>
                     </Grid>
-                    <Grid item xs={6} md={7} className='title'>
+                    <Grid item xs={6} md={6} className='title'>
                         <div className='title-one'>
                             <div> Cộng hòa xã hội chủ nghĩa Việt Nam</div>
                             <div> Độc lập - Tự do - Hạnh phúc</div>
@@ -49,50 +49,50 @@ const Resume = () => {
                         </h4>
                         <div className='two'>
                             <Grid container spacing={7}>
-                                <Grid item sm={12} lg={7} className='item'>
-                                    <b className='item-title' >Họ và tên: </b>
+                                <Grid item sm={12} lg={6} className='item'>
+                                    <b className='item-title' >Họ và tên : </b>
                                     <span className='item-content'>
-                                        .......................................
+                                        .......................................................................
                                         <span className='item-name'>huy</span>
                                     </span>
                                 </Grid>
                                 <Grid item sm={12} lg={5} className='item'>
-                                    <b className='item-title' >Giới tính: </b>
+                                    <b className='item-title' >Giới tính : </b>
                                     <span className='item-content'>
-                                        .......................................
+                                        ...........................................................................
                                         <span className='item-name'>Nam</span>
                                     </span>
                                 </Grid>
                                 <Grid item sm={12} lg={7} className='item'>
-                                    <b className='item-title' >Email: </b>
+                                    <b className='item-title' >Email : </b>
                                     <span className='item-content'>
-                                        ..............................................
+                                        ............................................................................
                                         <span className='item-name'>abc@gmail.com</span>
                                     </span>
                                 </Grid>
                                 <Grid item sm={12} lg={5} className='item'>
-                                    <b className='item-title' >Số ĐT: </b>
+                                    <b className='item-title' >Số ĐT : </b>
                                     <span className='item-content'>
-                                        ..............................................
+                                        .............................................................................
                                         <span className='item-name'>0123456789</span>
                                     </span>
                                 </Grid>
                                 <Grid item sm={12} lg={12} className='item'>
                                     <b className='item-title' >Địa chỉ : </b>
                                     <span className='item-content'>
-                                        ......................................................................................................
+                                        ..................................................................................
                                         <span className='item-name'>192 tam trinh</span>
                                     </span>
                                 </Grid>
                                 <Grid item sm={12} lg={7} className='item'>
-                                    <b className='item-title' >Số căn cước </b>
+                                    <b className='item-title' >Số căn cước : </b>
                                     <span className='item-content'>
                                         ..............................................
                                         <span className='item-name'>0123456789123</span>
                                     </span>
                                 </Grid>
                                 <Grid item sm={12} lg={5} className='item'>
-                                    <b className='item-title' >Ngày cấp: </b>
+                                    <b className='item-title' >Ngày cấp : </b>
                                     <span className='item-content'>
                                         ..............................................
                                         <span className='item-name'>22/22/2023</span>
@@ -101,19 +101,18 @@ const Resume = () => {
                                 <Grid item sm={12} lg={12} className='item'>
                                     <b className='item-title' >Nơi cấp : </b>
                                     <span className='item-content'>
-                                        ......................................................................................................
-                                        <span className='item-name'>192 tam trinh</span>
+                                        .................................................................................
                                     </span>
                                 </Grid>
                                 <Grid item sm={12} lg={7} className='item'>
-                                    <b className='item-title' >Dân tộc: </b>
+                                    <b className='item-title' >Dân tộc : </b>
                                     <span className='item-content'>
                                         ..............................................
                                         <span className='item-name'>Kinh</span>
                                     </span>
                                 </Grid>
                                 <Grid item sm={12} lg={5} className='item'>
-                                    <b className='item-title' >Tôn giáo: </b>
+                                    <b className='item-title' >Tôn giáo : </b>
                                     <span className='item-content'>
                                         ..............................................
                                         <span className='item-name'>Đạo phật</span>
