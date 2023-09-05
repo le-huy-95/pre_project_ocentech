@@ -117,10 +117,7 @@ const ModalCreatedUser = (props: Iprop) => {
                         Thoát
                     </Button>
                 </DialogActions>
-                <RegistrationForms
-                    open={openRegistration}
-                    setOpen={setOpenRegistration}
-                />
+
             </Dialog>
 
         </div>
