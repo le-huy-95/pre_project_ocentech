@@ -21,7 +21,7 @@ export const getExp = (id) => {
   return http(`/experience?employeeId=${id}`);
 };
 
-export const getToken = async (user: {
+export const SignIn = async (user: {
   username: string;
   password: string;
 }) => {
