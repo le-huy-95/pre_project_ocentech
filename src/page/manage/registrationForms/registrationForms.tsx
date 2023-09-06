@@ -7,7 +7,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import { Iprop } from "../modalCreatedUser/modalCreatedUser"
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import "./registrationForms.scss"
@@ -40,7 +39,11 @@ const StyledList = styled(List)({
     },
 });
 
+interface Iprop {
+    open: boolean,
+    setOpen: any
 
+}
 
 const RegistrationForms = (props: Iprop) => {
     const { open, setOpen } = props

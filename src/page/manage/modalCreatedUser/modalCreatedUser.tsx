@@ -51,13 +51,15 @@ function a11yProps(index: number) {
 
 
 export interface Iprop {
-    open: any,
+    open: boolean,
     setOpen: any
+    action: string
+    setAction: any
 }
 
 
 const ModalCreatedUser = (props: Iprop) => {
-    const { open, setOpen } = props
+    const { open, setOpen, setAction, action } = props
 
     const [value, setValue] = useState(0);
     const [openRegistration, setOpenRegistration] = useState(false);
@@ -68,6 +70,7 @@ const ModalCreatedUser = (props: Iprop) => {
 
     const handleClose = () => {
         setOpen(false);
+        setAction("")
     };
 
     const handleShowhideRegistrationFrom = () => {
@@ -85,7 +88,7 @@ const ModalCreatedUser = (props: Iprop) => {
                 className='modal-create-container'
             >
                 <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-                    Tạo mới nhân viên
+                    {action === "Create" ? "Tạo mới nhân viên" : "Chỉnh sửa nhân viên"}
                 </DialogTitle>
                 <Box sx={{ width: '100%' }}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>

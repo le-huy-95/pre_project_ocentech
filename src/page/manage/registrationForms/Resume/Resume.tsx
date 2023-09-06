@@ -56,21 +56,21 @@ const Resume = () => {
                                         <span className='item-name'>huy</span>
                                     </span>
                                 </Grid>
-                                <Grid item sm={12} lg={5} className='item'>
+                                <Grid item sm={12} lg={6} className='item'>
                                     <b className='item-title' >Giới tính : </b>
                                     <span className='item-content'>
                                         ...........................................................................
                                         <span className='item-name'>Nam</span>
                                     </span>
                                 </Grid>
-                                <Grid item sm={12} lg={7} className='item'>
+                                <Grid item sm={12} lg={6} className='item'>
                                     <b className='item-title' >Email : </b>
                                     <span className='item-content'>
                                         ............................................................................
                                         <span className='item-name'>abc@gmail.com</span>
                                     </span>
                                 </Grid>
-                                <Grid item sm={12} lg={5} className='item'>
+                                <Grid item sm={12} lg={6} className='item'>
                                     <b className='item-title' >Số ĐT : </b>
                                     <span className='item-content'>
                                         .............................................................................
@@ -84,14 +84,14 @@ const Resume = () => {
                                         <span className='item-name'>192 tam trinh</span>
                                     </span>
                                 </Grid>
-                                <Grid item sm={12} lg={7} className='item'>
+                                <Grid item sm={12} lg={6} className='item'>
                                     <b className='item-title' >Số căn cước : </b>
                                     <span className='item-content'>
                                         ..............................................
                                         <span className='item-name'>0123456789123</span>
                                     </span>
                                 </Grid>
-                                <Grid item sm={12} lg={5} className='item'>
+                                <Grid item sm={12} lg={6} className='item'>
                                     <b className='item-title' >Ngày cấp : </b>
                                     <span className='item-content'>
                                         ..............................................
@@ -104,14 +104,14 @@ const Resume = () => {
                                         .................................................................................
                                     </span>
                                 </Grid>
-                                <Grid item sm={12} lg={7} className='item'>
+                                <Grid item sm={12} lg={6} className='item'>
                                     <b className='item-title' >Dân tộc : </b>
                                     <span className='item-content'>
                                         ..............................................
                                         <span className='item-name'>Kinh</span>
                                     </span>
                                 </Grid>
-                                <Grid item sm={12} lg={5} className='item'>
+                                <Grid item sm={12} lg={6} className='item'>
                                     <b className='item-title' >Tôn giáo : </b>
                                     <span className='item-content'>
                                         ..............................................
