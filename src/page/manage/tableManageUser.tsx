@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from "react"
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -15,7 +15,10 @@ import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
 import HomeIcon from '@mui/icons-material/Home';
 import Typography from '@mui/material/Typography';
-
+import EditIcon from '@mui/icons-material/Edit';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import FmdBadIcon from '@mui/icons-material/FmdBad';
+import ModalUpdatedevelopments from "./modalUpdatedevelopments/modalUpdatedevelopments"
 interface Column {
   id: 'name' | 'code' | 'population' | 'size' | 'density';
   label: string;
@@ -94,8 +97,13 @@ const TableManage = () => {
       Quản lý nhân viên
     </Typography>,
   ];
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [openModalUpdatedevelopments, setOpenModalUpdatedevelopments] = useState(false);
+
+  const handleShowhideModalUpdatedevelopments = () => {
+    setOpenModalUpdatedevelopments(!openModalUpdatedevelopments);
+  };
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
@@ -206,7 +214,32 @@ const TableManage = () => {
                       <TableCell >
                         888
                       </TableCell>
+                      <TableCell >
+                        888
+                      </TableCell>
+                      <TableCell >
+                        888
+                      </TableCell>
+                      <TableCell >
+                        888
+                      </TableCell>
+                      <TableCell >
+                        888
+                      </TableCell>
+                      <TableCell style={{ display: "flex", alignItems: "center", justifyContent: "space-evenly" }} >
+                        <span onClick={() => handleShowhideModalUpdatedevelopments()} >
+                          <EditIcon style={{ color: 'green', cursor: "pointer", fontSize: "30px" }} />
+                        </span>
 
+                        <span>
+                          <VisibilityIcon style={{ color: 'gray', cursor: "pointer", fontSize: "30px" }} />
+                        </span>
+                        <span>
+                          <FmdBadIcon style={{ color: 'orange', cursor: "pointer", fontSize: "30px" }} />
+                        </span>
+
+
+                      </TableCell>
                     </TableRow>
                   );
                 })}
@@ -221,6 +254,10 @@ const TableManage = () => {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+        <ModalUpdatedevelopments
+          open={openModalUpdatedevelopments}
+          setOpen={setOpenModalUpdatedevelopments}
         />
       </Paper>
     </div>

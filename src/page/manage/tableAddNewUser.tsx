@@ -19,6 +19,11 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import ModalCreatedUser from "./modalCreatedUser/modalCreatedUser"
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import RegistrationForms from "./registrationForms/registrationForms"
+import DeleteUser from "./modalDeleteUser/modalDeleteUser"
 interface Column {
   id: 'name' | 'code' | 'population' | 'size' | 'density';
   label: string;
@@ -87,9 +92,27 @@ const rows = [
 
 const TableAddNewUser = () => {
   const [openModalCreate, setOpenModalCreate] = useState(false);
+  const [action, setAction] = useState<string>("");
+  const [openRegistration, setOpenRegistration] = useState(false);
+  const [openDeleteUser, setOpenDeleteUser] = useState(false);
 
-  const handleShowhideModal = () => {
+  const handleShowhideDeleteFrom = () => {
+    setOpenDeleteUser(!openDeleteUser)
+  }
+
+  const handleShowhideRegistrationFrom = () => {
+    setOpenRegistration(!openRegistration)
+  }
+
+
+  const handleShowhideModalCreatedUser = () => {
     setOpenModalCreate(!openModalCreate);
+    setAction("Create")
+  };
+
+  const handleShowhideModalUpdateUser = () => {
+    setOpenModalCreate(!openModalCreate);
+    setAction("Update")
   };
 
   const classes = useStyles();
@@ -137,12 +160,12 @@ const TableAddNewUser = () => {
 
       </div>
       <div className='btn-add-new' >
-        <Button variant="contained" size="medium" sx={{ background: '#7467ef' }} onClick={() => handleShowhideModal()}>
+        <Button variant="contained" size="medium" sx={{ background: '#7467ef' }} onClick={() => handleShowhideModalCreatedUser()}>
           <PersonAddAltIcon /> <span>Thêm mới</span>
         </Button>
       </div>
       <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-        <TableContainer sx={{ maxHeight: 500 }}>
+        <TableContainer sx={{ maxHeight: 500 }} className='table-all'>
           <Table stickyHeader aria-label="sticky table" className={classes.table}>
             <TableHead>
               <TableRow sx={{
@@ -201,7 +224,7 @@ const TableAddNewUser = () => {
                 </TableCell>
               </TableRow>
             </TableHead>
-            <TableBody>
+            <TableBody >
 
               <TableRow hover role="checkbox" tabIndex={-1} >
 
@@ -215,36 +238,32 @@ const TableAddNewUser = () => {
                 <TableCell >
                   888
                 </TableCell>
-
-              </TableRow>
-              <TableRow hover role="checkbox" tabIndex={-1} >
-
                 <TableCell >
-                  456
-                </TableCell>
-
-                <TableCell >
-                  567
+                  888
                 </TableCell>
                 <TableCell >
                   888
                 </TableCell>
-
-              </TableRow>
-              <TableRow hover role="checkbox" tabIndex={-1} >
-
                 <TableCell >
-                  456
-                </TableCell>
-
-                <TableCell >
-                  567
+                  888
                 </TableCell>
                 <TableCell >
                   888
                 </TableCell>
+                <TableCell style={{ display: "flex", alignItems: "center", justifyContent: "space-evenly" }} >
+                  <span onClick={() => handleShowhideModalUpdateUser()}>
+                    <EditIcon style={{ color: 'green', cursor: "pointer", fontSize: "30px" }} />
+                  </span>
+                  <span onClick={() => handleShowhideDeleteFrom()}>
+                    <DeleteIcon style={{ color: 'red', cursor: "pointer", margin: "0 30px", fontSize: "30px" }} />
+                  </span>
+                  <span onClick={() => handleShowhideRegistrationFrom()}>
+                    <VisibilityIcon style={{ color: 'gray', cursor: "pointer", fontSize: "30px" }} />
+                  </span>
 
+                </TableCell>
               </TableRow>
+
 
 
             </TableBody>
@@ -265,6 +284,16 @@ const TableAddNewUser = () => {
       <ModalCreatedUser
         open={openModalCreate}
         setOpen={setOpenModalCreate}
+        action={action}
+        setAction={setAction}
+      />
+      <RegistrationForms
+        open={openRegistration}
+        setOpen={setOpenRegistration}
+      />
+      <DeleteUser
+        open={openDeleteUser}
+        setOpen={setOpenDeleteUser}
       />
     </div>
 

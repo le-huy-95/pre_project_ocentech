@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./infomationUser.scss"
 import MarkunreadIcon from '@mui/icons-material/Markunread';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
@@ -12,9 +12,28 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import Button from '@mui/material/Button';
-
+import ModalCreatedExperience from "./modalCreateExperience/modalAddExperience"
+import DeleteExperience from "./modalDeleteExperence/modalDeleteExperence"
 const InfomationUser = () => {
 
+    const [openCreatExperience, setOpenCreatExperience] = useState(false)
+    const [action, setAction] = useState<string>("")
+    const [openDeleteExperience, setOpenDeleteExperience] = useState(false)
+
+    const handleShowhideModalDeleteExperience = () => {
+        setOpenDeleteExperience(!openDeleteExperience)
+    }
+
+
+    const handleShowhideModalCreateExperience = () => {
+        setOpenCreatExperience(!openCreatExperience)
+        setAction("Create")
+    }
+
+    const handleShowhideModalUpdateExperience = () => {
+        setOpenCreatExperience(!openCreatExperience)
+        setAction("Update")
+    }
 
     return (
         <div className='InfomationUser-container'>
@@ -159,7 +178,9 @@ const InfomationUser = () => {
                         </div>
                     </div>
                     <div className='four-right-content'>
-                        <div className='experience'>Kinh nghiệm làm việc <div><AddCircleIcon style={{ color: 'gray' }} /></div></div>
+                        <div className='experience'>Kinh nghiệm làm việc
+                            <div onClick={() => handleShowhideModalCreateExperience()} ><AddCircleIcon style={{ color: 'gray' }} /></div>
+                        </div>
                         <div className='experience-detail'>
                             <div className='experience-detail-form'>
                                 <div className='timeAndNameCompany'>
@@ -178,7 +199,7 @@ const InfomationUser = () => {
 
                                 <div className='edit'>
 
-                                    <Button variant="contained" disableElevation style={{
+                                    <Button variant="contained" disableElevation onClick={() => handleShowhideModalUpdateExperience()} style={{
                                         marginLeft: "20px", marginRight: "20px"
                                     }}>
                                         <CreateIcon />
@@ -186,7 +207,7 @@ const InfomationUser = () => {
                                 </div>
 
                                 <div className='delete'>
-                                    <Button variant="contained" disableElevation style={{
+                                    <Button variant="contained" disableElevation onClick={() => handleShowhideModalDeleteExperience()} style={{
                                         backgroundColor: "orange",
 
                                     }}>
@@ -195,6 +216,16 @@ const InfomationUser = () => {
                                 </div>
                             </div>
                         </div>
+                        <ModalCreatedExperience
+                            open={openCreatExperience}
+                            setOpen={setOpenCreatExperience}
+                            action={action}
+                            setAction={setAction}
+                        />
+                        <DeleteExperience
+                            open={openDeleteExperience}
+                            setOpen={setOpenDeleteExperience}
+                        />
 
 
                     </div>
