@@ -6,6 +6,7 @@ import { FamilyApi } from "./slice/fammily";
 import { LeaderApi } from "./slice/leader";
 import { ProposalAPI } from "./slice/Proposal";
 import { CertificateAPI } from "./slice/Certificate";
+import { ProcessAPI } from "./slice/Proccess";
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     [LeaderApi.reducerPath]: LeaderApi.reducer,
     [ProposalAPI.reducerPath]: ProposalAPI.reducer,
     [CertificateAPI.reducerPath]: CertificateAPI.reducer,
+    [ProcessAPI.reducerPath]: ProcessAPI.reducer,
     auth: LoginSlice,
   },
   middleware: (getDefaultMiddleware) =>
@@ -22,7 +24,7 @@ export const store = configureStore({
       EmployeeAPI.middleware,
       ExperieceAPi.middleware,
       FamilyApi.middleware,
-      CertificateAPI.middleware,
+      ProcessAPI.middleware,
       ProposalAPI.middleware,
       LeaderApi.middleware
     ),

@@ -8,13 +8,17 @@ import { RootState } from "../redux/store";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: "https://em-v2.oceantech.com.vn/em/",
-  credentials: "include",
-  prepareHeaders: (headers, { getState }) => {
-    const accessToken = (getState() as RootState).auth.user?.access_token;
-    // console.log(accessToken);
+  // credentials: "include",
+  prepareHeaders: (headers) => {
+    // const accessToken = (getState() as RootState).auth.user?.access_token;
 
-    if (accessToken) {
-      headers.set("Authorization", `Bearer ${accessToken}`);
+    const user = localStorage.getItem("user");
+    const accetoken_user = user ? JSON.parse(user) : null;
+
+    console.log(accetoken_user.access_token);
+    if (accetoken_user.access_token) {
+      headers.set("Authorization", `Bearer ${accetoken_user.access_token}`);
+      headers.set("Content-Type", "application/json");
     }
     return headers;
   },

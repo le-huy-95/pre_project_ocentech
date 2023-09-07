@@ -57,19 +57,9 @@ export const deleteSalary = async (id) => {
   return await http.delete(`/salary-increase/${id}`);
 };
 
-//process
-export const getProcessByEmp = async (id) => {
-  return await http.get(`/process?employeeId=${id}`);
-};
-export const addProcessByEmp = async (id, data) => {
-  return await http.post(`/process?employeeId=${id}`, data);
-};
-export const updateProcess = async (data) => {
-  return await http.put(`/process/${data.id}`, data);
-};
-export const deleteProcess = async (id) => {
-  return await http.delete(`/process/${id}`);
-};
+ 
+ 
+ 
 
 //proposal
 
