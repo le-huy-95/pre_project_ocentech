@@ -1,0 +1,226 @@
+.InfomationUser-container{
+    background-color: #f5f5f5;
+    font-size: 20px;
+    max-width: 1300px;
+    overflow: auto;
+    .content{
+       display: flex;
+    //    align-items: center;
+    //    justify-content: space-between;
+       overflow: auto;
+       min-width: 1300px;
+       padding: 0 20px;
+       .left-cv{
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        flex-direction: column;
+        flex: 35;
+        .left-content{
+            margin: 30px 0;
+            .first-left-content{
+                .avatar-user{
+                    background-image: url("https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/uploads/images/tin-tuc/157856/Originals/hinh-nen-iphone-13-pro-max-157856%20(11).jpg");
+                    height: 250px;
+                    width: 80%;
+                    background-position: center; /* Center the image */
+                    background-repeat: no-repeat; /* Do not repeat the image */
+                    background-size: cover; /* Resize the background image to cover the entire container */
+                    border-radius: 50%;
+                    margin: 30px 0;
+                }
+                .email{
+                    display: flex;
+                    align-items: center;
+                    gap: 18px;
+                    margin: 20px 0;
+                 
+                }
+                .phone{
+                    display: flex;
+                    align-items: center;
+                    gap: 18px;
+
+                }
+            }
+            .second-left-content , .three-left-content{
+                display: flex;
+                // align-items: center;
+                flex-direction: column;
+                .second-content-body , .three-content-body {
+                    display: flex;
+                    // align-items: center;
+                    // justify-content: center;
+                    .language , .skill-computer{
+                        .rating{
+                            width: 300px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                        }
+                       
+                    }
+                }
+                .four-content-body , .five-content-body{
+                         .text-input{
+                            textarea{
+                                width: 300px;
+                            }
+                         }
+                }
+            }
+        }
+       }
+       .center-cv{
+      
+        flex-direction: column;
+        flex: 5;
+        .first-line{
+            height: 180px;
+            width: 1px;
+            display: block;
+            margin: 50px auto 0;
+            border: 1px solid black;
+        }
+        .second-line{
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 20px;
+            gap: 20px;
+            div {
+                width: 60px;
+                height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: #929292;
+                svg{
+                    color: #f5f5f5 !important;
+                    font-size: 30px;
+                }
+            }
+        }
+        .three-line{
+            height: 240px;
+            width: 1px;
+            display: block;
+            margin: 30px auto 0;
+            border: 1px solid black;
+        }
+        .four-line{
+            height: 600px;
+            width: 1px;
+            display: block;
+            margin: 40px auto 0;
+            border: 1px solid black;
+        }
+       }
+       .right-cv{
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        flex-direction: column;
+        flex: 60;
+        .firt-right-content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 60px;
+            height: 140px;
+            div{
+                width: 700px;
+                &:first-child{
+                    font-size: 40px;
+                    font-weight: 700;
+                }
+                &:last-child{
+                    font-size: 30px;
+                }
+           }
+       }
+       .second-right-content{
+        width: 700px;
+        margin-top: 82px;
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+       }
+       .three-right-content{
+          width: 700px;
+          margin-top: 50px;
+          .puspose{
+            font-size: 40px;
+            font-weight: 700;
+            }
+           .content-detail{
+            margin-right: 40px;
+            border-radius: 20px;
+            background-color: #9e9c9c;
+            overflow: auto;
+               div{
+                min-height: 170px;
+                padding: 20px;
+                color: black;
+               }
+           }
+         } 
+         .four-right-content{
+            width: 700px;
+            margin-top: 80px;
+            overflow: auto;
+            max-height: 300px;
+            .experience{
+                font-size: 40px;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-right: 30px;
+                div{
+                    cursor: pointer;
+                }
+            }
+            .experience-detail{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+
+                .experience-detail-form{
+                    flex: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    overflow-wrap: anywhere;
+                    gap: 10px;
+                    margin-top: 40px;
+                    .timeAndNameCompany{
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        &:nth-child(2){
+                            display: flex;
+                        }
+                    }
+                    .experience-detail{
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                
+                }
+                .btn-optional{
+                    flex: 10%;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+         }
+       }
+        
+    }
+}

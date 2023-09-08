@@ -1,0 +1,66 @@
+.modal-Updatedevelopments-container{
+    .css-1gsv261{
+        height: 49px;
+       }
+       .MuiBox-root{
+        height: 100%;
+        .gird-all{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .gird-row{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .date{
+                    margin-bottom: 5px;
+                }
+            }
+            .left{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-bottom: 80px;
+                .icon-content{
+                    svg{
+                        font-size: 250px;
+                        color: #7467ef;
+                    }
+               
+                }
+                .name-user{
+                    font-size: 30px;
+                    font-weight: 600;
+                }
+                .user-infomation{
+                    width: 260px;
+                    .container{
+                        .item{
+                            display: flex;
+                            align-items: center;
+                            justify-content:space-between ;
+                            font-size: 20px;
+                            margin: 10px 0;
+                            .icon-item{
+                                svg{
+                                    font-size: 30px;
+                                    color: #7467ef;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .right{
+                margin-top: -110px !important;
+            }
+        }
+       
+       
+       }
+        .icon-exit{
+            color: #7467ef !important;
+            font-weight: 500;
+        }
+}
