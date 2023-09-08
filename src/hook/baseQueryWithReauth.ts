@@ -15,6 +15,7 @@ const baseQuery = fetchBaseQuery({
     const user = localStorage.getItem("user");
     const accetoken_user = user ? JSON.parse(user) : null;
 
+    console.log(accetoken_user.access_token);
     if (accetoken_user.access_token) {
       headers.set("Authorization", `Bearer ${accetoken_user.access_token}`);
       headers.set("Content-Type", "application/json");

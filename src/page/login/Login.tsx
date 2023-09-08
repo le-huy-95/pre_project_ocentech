@@ -29,14 +29,6 @@ const Login = () => {
       username: data.get("username"),
       password: data.get("password"),
     });
-    if (!data.get("username")) {
-      toast.error("Vui lòng không để trống tên tài khoản")
-      return;
-    }
-    if (!data.get("password")) {
-      toast.error("Vui lòng không để trống mật khẩu")
-      return;
-    }
     if (data) {
       dispatch(
         loginApi({
@@ -49,12 +41,11 @@ const Login = () => {
 
   React.useEffect(() => {
     if (isSuccess) {
-      console.log("user", user.access_token)
       toast.success("Đăng nhập thành công");
       localStorage.setItem("user", JSON.stringify(user));
-      localStorage.setItem("access_token", user.access_token);
-
       navigate("/manageuser");
+    } else {
+      toast.error("Tên Đăng nhập hoặc mật khẩu sai");
     }
   }, [isSuccess, navigate, user]);
 
@@ -97,7 +88,6 @@ const Login = () => {
                 name="username"
                 autoComplete="username"
                 autoFocus
-
               />
               <TextField
                 margin="normal"
