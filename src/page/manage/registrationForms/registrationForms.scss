@@ -1,0 +1,30 @@
+.container-registration-Forms{
+    height: 100%;
+    .icon-exit{
+        color: #7467ef !important;
+        font-weight: 500;
+    }
+    .MuiList-root{
+        .registration-Forms-item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    
+}
+.MuiDialog-container{
+    .sidebar {
+        position: fixed; 
+        .registration-Forms-item{
+            span{
+                font-size: 20px;
+            }
+        }
+    }
+    .Form-content{
+        margin-left: 200px;
+        overflow: auto;
+        
+    }
+}
